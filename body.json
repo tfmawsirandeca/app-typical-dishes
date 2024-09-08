@@ -1,0 +1,12 @@
+{
+	"results": [
+		{
+			"price_forecasted": 1.2893503393850672,
+            "ingredient": "ajo"
+		},
+        {
+			"price_forecasted": 7.40,
+            "ingredient": "carne"
+		}
+	]
+}
