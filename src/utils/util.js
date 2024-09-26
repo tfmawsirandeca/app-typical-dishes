@@ -50,3 +50,24 @@ const calculateDishPrice = (ingredients, ingredientPrices) => {
 
   return totalPrice;
 };
+
+
+// utils/util.js
+export const getAvailableDates = () => {
+  const dates = [];
+  const today = new Date();
+  
+  // Get the last day of the current month
+  const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  
+  // Loop from today to the last day of the month
+  for (let d = today; d <= lastDayOfMonth; d.setDate(d.getDate() + 1)) {
+    const dateString = d.toISOString().split('T')[0]; // Format date as 'YYYY-MM-DD'
+    dates.push({
+      label: dateString,
+      value: dateString,
+    });
+  }
+  
+  return dates;
+};

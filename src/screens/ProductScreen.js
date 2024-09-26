@@ -2,37 +2,48 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Dimensions, Image, ScrollView } from 'react-native';
 import DropdownDatePicker from '../components/DropdownDatePicker'; // Import the dropdown date picker component
 import useIngredients from '../hooks/useIngredients';
+import { getTodayDate, getAvailableDates } from '../utils/util';
 
 const ProductScreen = () => {
-  const [selectedDate, setSelectedDate] = useState('2024-08-28');
+  const todayDate = getTodayDate();
+  const [selectedDate, setSelectedDate] = useState(todayDate);
   const { data, loading, error } = useIngredients(selectedDate);
 
-  if (loading) return <Text>Loading...</Text>;
+  // Get available dates for the dropdown
+  const availableDates = getAvailableDates();
+  console.log('DATE AVAILABLES ', availableDates);
+
+  if (loading) return <Text>Cargando...</Text>;
   if (error) return <Text>Error: {error.message}</Text>;
 
   if (!data || !data.results || data.results.length === 0) return <Text>No data available</Text>;
+  // Filter out items with ingredient name 'SAL'
+  const filteredData = data.results.filter(item => item.ingredient !== 'SAL');
 
-  const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <Image source={{ uri: item.url }} style={styles.itemImage} />
-      <View style={styles.itemTextContainer}>
-        <Text style={styles.itemName}>{item.ingredient}</Text>
-        <Text style={styles.itemDescription}>{item.quantity + item.measurement || 'No description available'}</Text>
-        <Text style={styles.itemPrice}>{`€ ${item.price_forecasted.toFixed(2)}`}</Text>
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.itemContainer}>
+        <Image source={{ uri: item.url }} style={styles.itemImage} resizeMode="contain"/>
+        <View style={styles.itemTextContainer}>
+          <Text style={styles.itemName}>{item.ingredient}</Text>
+          <Text style={styles.itemDescription}>{item.quantity + item.measurement || 'No description available'}</Text>
+          <Text style={styles.itemPrice}>{`€ ${item.price_forecasted.toFixed(2)}`}</Text>
+        </View>
       </View>
-    </View>
-  );
+    );
+  };
 
   return (
     <View style={styles.container}>
       <DropdownDatePicker
         selectedDate={selectedDate}
         onDateChange={(date) => setSelectedDate(date)}
+        availableDates={availableDates} // Pass the available dates to the dropdown
       />
-      <Text style={styles.selectedDate}>Selected Date: {selectedDate}</Text>
+      <Text style={styles.selectedDate}>Fecha seleccionada: {selectedDate}</Text>
       <ScrollView style={styles.scrollView}>
         <FlatList
-          data={data.results}
+          data={filteredData}
           renderItem={renderItem}
           keyExtractor={(item) => item.ingredient}
           numColumns={3}

@@ -1,6 +1,4 @@
 import axios from "axios";
-// import { API_URL } from "react-native-dotenv";
-
 // Crear una instancia de Axios con configuración base
 const api = axios.create({
   baseURL: "https://rseae398n6.execute-api.us-east-1.amazonaws.com/Prod",

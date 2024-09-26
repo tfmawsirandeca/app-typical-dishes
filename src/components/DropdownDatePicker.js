@@ -1,40 +1,20 @@
 // DropdownDatePicker.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
-import moment from 'moment';
 
-const DropdownDatePicker = ({ selectedDate, onDateChange }) => {
+const DropdownDatePicker = ({ selectedDate, onDateChange, availableDates }) => {
   const [open, setOpen] = useState(false);
-  const [dateOptions, setDateOptions] = useState([]);
-
-  useEffect(() => {
-    // Generate a list of dates for the dropdown
-    const startDate = moment().subtract(1, 'month');
-    const endDate = moment().add(1, 'month');
-    let options = [];
-    
-    while (startDate <= endDate) {
-      options.push({
-        label: startDate.format('YYYY-MM-DD'),
-        value: startDate.format('YYYY-MM-DD'),
-      });
-      startDate.add(1, 'day');
-    }
-    
-    setDateOptions(options);
-  }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Select Date:</Text>
+      <Text style={styles.label}>Seleccionar una fecha:</Text>
       <DropDownPicker
         open={open}
         value={selectedDate}
-        items={dateOptions}
+        items={availableDates}
         setOpen={setOpen}
         setValue={onDateChange}
-        setItems={setDateOptions}
         placeholder="Select a date"
         containerStyle={styles.dropdownContainer}
         style={styles.dropdown}

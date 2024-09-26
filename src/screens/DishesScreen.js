@@ -5,11 +5,9 @@ import usePricePredictions from '../hooks/usePricePredictions';
 
 const DishesScreen = () => {
   const date = getTodayDate();
-  console.log('mydate is ')
-  console.log(date)
   const { dishesWithPrices, loading, error } = usePricePredictions(date);
 
-  if (loading) return <Text>Loading...</Text>;
+  if (loading) return <Text>Cargando...</Text>;
   if (error) return <Text>Error: {error.message}</Text>;
 
   const renderItem = ({ item }) => (
@@ -30,22 +28,22 @@ const DishesScreen = () => {
         data={dishesWithPrices}
         renderItem={renderItem}
         keyExtractor={item => item.name}
-        contentContainerStyle={styles.scrollViewContent}
+        contentContainerStyle={styles.flatListContent} // Adjust padding here
+        showsVerticalScrollIndicator={false} // Disable extra scroll indicator
       />
     </View>
   );
 };
 
-const { height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,  // Fill the full screen height
     backgroundColor: '#f5f5f5',
     padding: 16,
+    overflow: 'hidden', // Ensure parent doesn't introduce scroll
   },
-  scrollViewContent: {
-    paddingBottom: 2000, // Add bottom padding for spacing
+  flatListContent: {
+    paddingBottom: 20,  // Bottom padding for extra space
   },
   headerText: {
     fontSize: 20,

@@ -19,7 +19,7 @@ export const europeDishes = {
             "CALAMAR": "200 g",
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.05 L",
+            "ACEITE_OLIVA": "50 ml",
             "TOMATE": "400 g",
             "AJO": "400 g"
         },
@@ -30,7 +30,7 @@ export const europeDishes = {
         ingredients: {
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.05 L",
+            "ACEITE_OLIVA": "50 ml",
             "TOMATE": "400 g",
             "AJO": "200 g",
             "PIMIENTO": "200 g"
@@ -43,8 +43,8 @@ export const europeDishes = {
             "SAL": "5 g",
             "PEPINO": "100 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.01 L",
-            "TOMATE": "1 kg",
+            "ACEITE_OLIVA": "10 ml",
+            "TOMATE": "1000 g",
             "AJO": "100 g",
             "PAN": "1 UNIDAD"
         },
@@ -55,8 +55,8 @@ export const europeDishes = {
         ingredients: {
             "CALAMAR": "500 g",
             "SAL": "5 g",
-            "ACEITE_OLIVA": "0.01 L",
-            "PAN rallado": "100 g"
+            "ACEITE_OLIVA": "10 ml",
+            "PAN rallado": "1 UNIDAD"
         },
         url: "https://us.santokuknives.co.uk/cdn/shop/articles/silverware-placement-sqCalamari_Fritti_natural_lighting_tantalizing_plating_sq-622992.jpg?v=1684494222",
         description: "Consiste en calamares cortados en tiras o aros que se rebozan en harina y se fríen en abundante aceite."
@@ -64,7 +64,7 @@ export const europeDishes = {
     "SALade Niçoise (Francia)": {
         ingredients: {
             "SAL": "5 g",
-            "PEPINO": "1/2",
+            "PEPINO": "100 g",
             "ACEITE_OLIVA": "100 ml",
             "TOMATE": "2",
             "HUEVO": "2",
@@ -77,7 +77,7 @@ export const europeDishes = {
         ingredients: {
             "PATATAS": "500 g",
             "SAL": "5 g",
-            "ACEITE_OLIVA": "0.5 L",
+            "ACEITE_OLIVA": "500 ml",
             "AJO": "100 g",
             "PIMIENTO": "100 g",
             "TOMATE": "200 g"
@@ -102,7 +102,7 @@ export const europeDishes = {
         ingredients: {
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.01 L",
+            "ACEITE_OLIVA": "10 ml",
             "TOMATE": "400 g",
             "AJO": "200 g",
             "PIMIENTO": "200 g",
@@ -114,23 +114,23 @@ export const europeDishes = {
     "Sopa de TOMATE y PIMIENTO (Hungría)": {
         ingredients: {        
             "SAL": "5 g",
-            "ACEITE_OLIVA": "0.050 L",
+            "ACEITE_OLIVA": "50 ml",
             "TOMATE": "600 g",
             "PIMIENTO": "200 g",
             "CEBOLLA": "100 g",
             "AJO": "300 g"
         },
-        url: "https://www.mariacosbel.com/wp-content/uploads/2019/06/04.jpg",
+        url: "https://imag.bonviveur.com/sopa-de-tomate.jpg",
         description: "Sopa de tomate"
     },
     "Wiener Schnitzel con PATATAS (Austria)": {
         ingredients: { 
-            "CARNE": "1 Kg",
+            "CARNE": "1000 g",
             "SAL": "5 g",
             "PATATAS": "400 g",
-            "HUEVO": "2 kg",
-            "PAN": "200 g",
-            "ACEITE_OLIVA": "0.05 L"
+            "HUEVO": "2000 g",
+            "PAN": "2 UNIDAD",
+            "ACEITE_OLIVA": "50 ml"
         },
         url: "https://www.carnicerosdenavarra.com/wp-content/uploads/2022/07/WienerSchnitzel-1000x640.jpg",
         description: "Este plato consiste en una fina loncha de chuleta de ternera empanada al estilo inglés"
@@ -153,7 +153,7 @@ export const europeDishes = {
             "CALAMAR": "200 g",
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.05 L",
+            "ACEITE_OLIVA": "50 ml",
             "CAMARON": "200 g",
             "TOMATE": "200 g",
             "AJO": "200 g"
@@ -164,7 +164,7 @@ export const europeDishes = {
     "Pizza Margherita (Italia)": {
         ingredients: {
             "SAL": "5 g",
-            "ACEITE_OLIVA": "0.02 L",
+            "ACEITE_OLIVA": "20 ml",
             "TOMATE": "400 g",
             "AJO": "100 g",
             "PAN": "2 UNIDAD"
@@ -177,7 +177,7 @@ export const europeDishes = {
             "PATATAS": "400 g",
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.01 L",
+            "ACEITE_OLIVA": "10 ml",
             "HUEVO": "600 g"
         },
         url: "https://www.fattoincasadabenedetta.it/wp-content/uploads/2023/05/FRITTATA_CON_LE_PATATE_SITO-4_intro.jpg",
@@ -199,10 +199,10 @@ export const europeDishes = {
     "SALmorejo (España)": {
         ingredients: {
             "SAL": "5 g",
-            "TOMATE": "1 kg",
+            "TOMATE": "1000 g",
             "AJO": "100 g",
-            "PAN": "200 g",
-            "ACEITE_OLIVA": "0.150 L",
+            "PAN": "2 UNIDAD",
+            "ACEITE_OLIVA": "15 ml",
             "HUEVO": "200 g",
             "JAMON": "100 g"
         },
@@ -211,10 +211,10 @@ export const europeDishes = {
     },
     "Pollo al Ajillo (España)": {
         ingredients: {
-            "CARNE": "1.5 kg",
+            "CARNE": "1500 g",
             "SAL": "5 g",
             "AJO": "600 g",
-            "ACEITE_OLIVA": "0.100 L",
+            "ACEITE_OLIVA": "10 ml",
             "PIMIENTO": "100 g",
             "PATATAS": "400 g"
         },
@@ -225,7 +225,7 @@ export const europeDishes = {
         ingredients: {
             "SAL": "5 g",
             "CEBOLLA": "100 g",
-            "ACEITE_OLIVA": "0.50 L",
+            "ACEITE_OLIVA": "50 ml",
             "PATATAS": "400 g",
             "AJO": "200 g",
             "Chorizo": "100 g"
